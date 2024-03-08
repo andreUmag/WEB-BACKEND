@@ -1,19 +1,17 @@
 package app.webbackend.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "mensajes")
+@Table(name = "Mensajes")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
+@Builder
 
 public class Mensaje {
     @Id
@@ -27,5 +25,5 @@ public class Mensaje {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id", nullable = false)
-    private usuarios usuario;
+    private Usuario usuario;
 }

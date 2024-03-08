@@ -1,12 +1,11 @@
 package app.webbackend.models;
-
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
-@Table(name = "partidas")
+@Table(name = "Partidas")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -31,5 +30,5 @@ public class Partida {
     private String comentarios;
 
     @ManyToMany(mappedBy = "partidas")
-    private List<usuarios> usuarios;
+    private List<Usuario> usuarios;
 }
