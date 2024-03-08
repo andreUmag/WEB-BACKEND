@@ -27,5 +27,5 @@ public class Mensaje {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id", nullable = false)
-    private usuarios usuario;
+    private Usuario usuario;
 }

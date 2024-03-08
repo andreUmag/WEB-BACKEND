@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "partidas")
@@ -31,5 +32,5 @@ public class Partida {
     private String comentarios;
 
     @ManyToMany(mappedBy = "partidas")
-    private List<usuarios> usuarios;
+    private List<Usuario> usuarios;
 }
