@@ -13,11 +13,9 @@ import java.util.List;
 public class UsuarioMapperTest {
 
     Sugerencia sugerencia = Sugerencia.builder().descripcion("Prueba").build();
-
     List<Sugerencia> sugerencias = List.of(sugerencia);
 
     Mensaje mensaje = Mensaje.builder().contenido("Jelouda").build();
-
     List<Mensaje> mensajes = List.of(mensaje);
 
     Usuario usuario = Usuario.builder()
@@ -29,10 +27,11 @@ public class UsuarioMapperTest {
             .mensajes(mensajes)
             .build();
 
-    UsuarioDto usuarioDto = UsuarioMapper.INSTANCE.usuarioEntitytoUsuarioDto(usuario);
-
     @Test
     public void usuarioEntitytoDto() {
+
+        UsuarioDto usuarioDto = UsuarioMapper.INSTANCE.usuarioEntitytoUsuarioDto(usuario);
+
         assertThat(usuarioDto.nombre().isEmpty());
         assertThat(usuarioDto.nombre()).isEqualTo("Lenis");
     }
