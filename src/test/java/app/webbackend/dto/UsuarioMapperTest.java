@@ -1,9 +1,11 @@
-package app.webbackend.dto.usuario;
+package app.webbackend.dto;
 
 import app.webbackend.dto.usuario.UsuarioDto;
+import app.webbackend.dto.usuario.UsuarioMapper;
 import app.webbackend.models.Mensaje;
 import app.webbackend.models.Sugerencia;
 import app.webbackend.models.Usuario;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -32,8 +34,8 @@ public class UsuarioMapperTest {
 
         UsuarioDto usuarioDto = UsuarioMapper.INSTANCE.usuarioEntitytoUsuarioDto(usuario);
 
-        assertThat(usuarioDto.nombre().isEmpty());
-        assertThat(usuarioDto.nombre()).isEqualTo("Lenis");
+        Assertions.assertThat(usuarioDto.nombre().isEmpty());
+        Assertions.assertThat(usuarioDto.nombre()).isEqualTo("Lenis");
     }
 
 }
